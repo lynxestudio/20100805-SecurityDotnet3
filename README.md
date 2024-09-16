@@ -40,9 +40,12 @@ using System.Security.Principal;
 using System.Threading;
 </pre>
 <p align="justify">
-5.Dentro del método OnBtnEnterClicked del código generado por MonoDevelop para el evento del botón btnEnter, escribimos el siguiente código, el cual contiene toda la funcionalidad de nuestro programa:
+5.Dentro del método OnBtnEnterClicked del código generado por MonoDevelop para el evento del botón btnEnter, escribimos las siguientes lineas, las cuales contienen toda la funcionalidad de nuestro programa:
 </p>
-<img src="images/OnBtnEnterClicked.png"/>
+<pre>
+    AppDomain.CurrentDomain.SetPrincipalPolicy(PrincipalPolicy.WindowsPrincipal);
+    WindowsPrincipal wp = (WindowsPrincipal)Thread.CurrentPrincipal;
+</pre>
 Nuestro programa entonces se vera como en la siguiente imagen:
 <img src="images/simplePrin7.png"/>
 <p align="justify">
